@@ -1,5 +1,5 @@
 <h2><span style="font-size: medium;"> Online Shopping Store </span></h2>
-<h3><span style="font-size: medium;"> This is a rewrited template form https://github.com/kmonlineworks/khaki-ecommerce-html-template </span></h3>
+<h3><span style="font-size: medium;"> This is a rewrited template from https://github.com/kmonlineworks/khaki-ecommerce-html-template </span></h3>
 <table class="post-table">
 <thead>
 <tr>
