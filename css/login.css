@@ -1,0 +1,96 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.login .title {
+  color: #232323c4;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  align-self: center;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  color: #232323;
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.custom-input-box {
+  padding: 6px 12px;
+  border: 1px solid #23232323;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.custom-input-box:focus-within {
+  border: 1px solid #2323237c;
+}
+
+.custom-input {
+  all: unset;
+  width: 100%;
+  color: #232323c4;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.help-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.help-link {
+  all: unset;
+  color: #3e78c2;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.help-link:hover {
+  opacity: 0.9;
+}
+.help-link:active {
+  color: #2c558a;
+}
+
+.custom-button {
+  width: 100%;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  background: #2f4f4f;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.custom-button:hover {
+  opacity: 0.9;
+}
+.custom-button:active {
+  background: #233b3b;
+}
