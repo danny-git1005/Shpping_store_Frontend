@@ -1,6 +1,6 @@
 <h2><span style="font-size: medium;"> Online Shopping Store </span></h2>
 <h3><span style="font-size: medium;"> This is a rewrited template from https://github.com/kmonlineworks/khaki-ecommerce-html-template </span></h3>
-<table class="post-table">
+<!-- <table class="post-table">
 <thead>
 <tr>
 <th>Technology</th>
@@ -31,7 +31,7 @@
 <td>Chrome, Firefox, MS Edge, etc.</td>
 </tr>
 </tbody>
-</table>
+</table> -->
 <p style="text-align: left;">This is an online shop website template it is a multipurpose non-responsive website template that can cover the basic online shop requirement.</p>
 <p style="text-align: left;">The website template is built on HTML5 CSS3 and Javascript / JQuery.</p>
 <p style="text-align: left;">It has used external plugins library like jquery UI, fancybox for viewing product images on a detail page, and bxslider to slide products on the home page.</p>
