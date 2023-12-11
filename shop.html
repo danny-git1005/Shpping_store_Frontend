@@ -167,7 +167,7 @@
 				</div>
 				<div class="product-content">
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img1.jpg">
 						</a>
 						<div class="product-detail">
@@ -178,7 +178,7 @@
 						</div>						
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img2.jpg">
 						</a>
 						<div class="product-detail">
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img3.jpg">
 						</a>
 						<div class="product-detail">
@@ -200,7 +200,7 @@
 						</div>
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img4.jpg">
 						</a>
 						<div class="product-detail">
@@ -211,7 +211,7 @@
 						</div>
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img5.jpg">
 						</a>
 						<div class="product-detail">
@@ -222,7 +222,7 @@
 						</div>
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img6.jpg">
 						</a>
 						<div class="product-detail">
@@ -233,7 +233,7 @@
 						</div>
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img7.jpg">
 						</a>
 						<div class="product-detail">
@@ -244,7 +244,7 @@
 						</div>
 					</div>
 					<div class="product">
-						<a href="product.html">
+						<a >
 							<img src="img/product/img8.jpg">
 						</a>
 						<div class="product-detail">
@@ -331,6 +331,17 @@
 			</div> <!-- Footer Bar -->
 		</div>
 	</footer> <!-- Footer Area -->
+	<script>
+		$(window).on('load', function() {
+            
+            $('.product').on('click', function() {
+                let name = $(this).children('.product-detail').children()[1].innerText;
+				console.log(name);
+                url = "./product.html?name="+name;
+                window.location.href = url;
+            })
+        });
+	</script>
 
 </body>
 
