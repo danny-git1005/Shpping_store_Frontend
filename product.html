@@ -23,6 +23,9 @@
 
 		<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+
+		<script src="./api/getProductInfo.js" ></script>
+		
 		<script>
 		$(document).ready(function(){		
 			$('.fancybox').fancybox({
@@ -352,7 +355,20 @@
 			</div> <!-- Footer Bar -->
 		</div>
 	</footer> <!-- Footer Area -->
+	<script typs="text/javascipt">
 
+        $(window).on('load', function() {
+
+            let productname = new URLSearchParams(window.location.search);
+
+            url="./js/getProductInfo.js.js";
+            $.getScript(url,function(){
+                get_product_info(productname.get('name'),"detail");
+            });
+
+        });
+        //let name = $('.left_row_title').text();
+    </script>
 </body>
 
 </html>
