@@ -12,6 +12,11 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<!-- Javascript -->	
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="./js/jquery.min.3-4-1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<script src="./api/getProfile.js"></script>
+		<script src="./api/getLogout.js"></script>
+
  	</head>
 <body>
 
@@ -37,7 +42,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="dropdown">
+					<!-- <div class="dropdown">
 						<img src="img/icons/heart.png">
 						<div class="dropdown-menu wishlist-item">
 							<table border="1">
@@ -91,7 +96,7 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
+					</div> -->
 				</div> <!-- shop icons -->
 			</div> <!-- brand -->
 
@@ -137,7 +142,7 @@
 						<li><a href="account.html" class="active">Account <span>></span></a></li>
 						<li><a href="orders.html">My Orders <span>></span></a></li>
 						<li><a href="change-password.html">Change Password <span>></span></a></li>
-						<li><a href="">Logout <span>></span></a></li>
+						<li><a href="#" id='logOut_button' >Logout <span>></span></a></li>
 					</ul>
 				</div>
 				<div class="account-detail">
@@ -268,6 +273,20 @@
 			</div> <!-- Footer Bar -->
 		</div>
 	</footer> <!-- Footer Area -->
+	<script typs="text/javascipt">
+
+        $(window).on('load', function() {
+
+            let user = $.cookie('userid');
+
+            url="./api/getProfile.js";
+            $.getScript(url,function(){
+                get_profile(user,"detail");
+            });
+
+        });
+        //let name = $('.left_row_title').text();
+    </script>
 
 </body>
 
