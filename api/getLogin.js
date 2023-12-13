@@ -7,26 +7,34 @@ $(document).ready(function(){
     function login(){
         let user = $('#account')[0].value;
         let pwd = $('#pwd')[0].value;
-        
+
         $.ajax({
             type: "POST",
-            url: "",
+            url: "./databaseapi/login.php",
             dataType:'json',
             data:{'submit':'login','username':user , 'password':pwd},
+            
             success: function(response){  
     
-                //console.log(response.result);
-                if ( response.userid )
+                console.log(response.result);
+                if ( response.ID )
                 {
                     alert(response.result);
-                    $.cookie('username',user);
-                    $.cookie('userid',response.userid);
-                    location.href = "./index_in.html";
+                    // $.cookie('username',user);
+                    $.cookie('userid',response.ID);
+                    if (response.auth == 'user')
+                    {
+                        location.href = "./index_in.html";
+                    }
+                    else{
+                        location.href = "./admin/index.html";
+                    }
+
                 }
                 else
                 {
                     alert(response.result);
-                    location.reload();
+                    // location.reload();
                 }
             },
             error: function( XMLHttpRequest,response){
