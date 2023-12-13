@@ -12,6 +12,9 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<!-- Javascript -->	
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<script src="./api/getLogout.js"></script>
+		<script src="./api/getOrder.js"></script>
  	</head>
 <body>
 
@@ -134,53 +137,53 @@
 					<div class="profile-img">
 						<img src="img/product/img5.jpg">
 						<h2>John Doe</h2>
-						<p>user@mail.com</p>
+						<p id="accound_id"></p>
 					</div>						
 					<ul>
-						<li><a href="account.html" class="active">Account <span>></span></a></li>
-						<li><a href="orders.html">My Orders <span>></span></a></li>
+						<li><a href="account.html">Accounts <span>></span></a></li>
+						<li><a href="orders.html" class="active">My Orders <span>></span></a></li>
 						<li><a href="change-password.html">Change Password <span>></span></a></li>
-						<li><a href="">Logout <span>></span></a></li>
+						<li><a href="#" id='logOut_button'>Logout <span>></span></a></li>
 					</ul>
 				</div>
 				<div class="account-detail">					
 					<h2>My Orders</h2>
 					<div class="order-detail">
-						<table>
+						<table id="orderTable">
 							<thead>
 								<tr>
-									<th>Date</th>
-									<th>Order Ref#</th>
+									<th>Product name</th>
+									<th>Order Id</th>
 									<th>Amount</th>
-									<th>Payment Mode</th>
-									<th>Status</th>
-									<th>View</th>
+									<th>delivery_id</th>
+									<th>delivery_com</th>
+									<th>status</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>06-02-2020</td>
-									<td>61245231241</td>
-									<td>2,150</td>
-									<td>Cash</td>
-									<td>Pending</td>
-									<td><a href="#">View</a></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
 								</tr>
 								<tr>
-									<td>08-02-2020</td>
-									<td>612467771245</td>
-									<td>5,000</td>
-									<td>Cash</td>
-									<td>Pending</td>
-									<td><a href="#">View</a></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
 								</tr>
 								<tr>
-									<td>15-08-2020</td>
-									<td>612874511233</td>
-									<td>3000</td>
-									<td>Cash</td>
-									<td>Pending</td>
-									<td><a href="#">View</a></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
 								</tr>	
 							</tbody>
 						</table>
@@ -259,6 +262,21 @@
 			</div> <!-- Footer Bar -->
 		</div>
 	</footer> <!-- Footer Area -->
+	<script typs="text/javascipt">
+
+        $(window).on('load', function() {
+
+            let user = $.cookie('userid');
+
+            url="./api/getOrder.js";
+            $.getScript(url,function(){
+                get_user_order(user,"detail");
+            });
+
+        });
+        //let name = $('.left_row_title').text();
+    </script>
+
 
 </body>
 

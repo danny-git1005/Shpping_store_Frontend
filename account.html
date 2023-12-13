@@ -12,7 +12,6 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<!-- Javascript -->	
 		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script src="./js/jquery.min.3-4-1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 		<script src="./api/getProfile.js"></script>
 		<script src="./api/getLogout.js"></script>
@@ -136,7 +135,7 @@
 					<div class="profile-img">
 						<img src="img/product/img5.jpg">
 						<h2>John Doe</h2>
-						<p>john_doe@mail.com</p>
+						<p id="accound_id"></p>
 					</div>
 					<ul>
 						<li><a href="account.html" class="active">Account <span>></span></a></li>
@@ -278,7 +277,7 @@
         $(window).on('load', function() {
 
             let user = $.cookie('userid');
-
+			
             url="./api/getProfile.js";
             $.getScript(url,function(){
                 get_profile(user,"detail");
