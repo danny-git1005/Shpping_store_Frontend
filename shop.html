@@ -16,6 +16,7 @@
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		
 		<script src="./api/getProductInfo.js" ></script>
+		<script src="./api/getShop.js"></script>
 
   		<script>		   
 		    $( function() {
@@ -57,7 +58,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="dropdown">
+					<!-- <div class="dropdown">
 						<img src="img/icons/heart.png">
 						<div class="dropdown-menu wishlist-item">
 							<table border="1">
@@ -111,7 +112,7 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
+					</div> -->
 				</div> <!-- shop icons -->
 			</div> <!-- brand -->
 
@@ -151,12 +152,9 @@
 					<div class="sidebar-widget">
 						<h3>Category</h3>
 						<ul>
-							<li><a href="">Men's Clothes</a></li>
-							<li><a href="">Men's Shoes</a></li>
-							<li><a href="">Men's Watches</a></li>
-							<li><a href="">Women's Handbags</a></li>
-							<li><a href="">Women's Glasses</a></li>
-
+							<li><a id="cat desktop">Desktop</a></li>
+							<li><a id="cat Laptop">Laptop</a></li>
+							<li><a id="cat Monitor">Monitor</a></li>
 						</ul>
 					</div>
 					<div class="sidebar-widget">
@@ -171,12 +169,12 @@
 				<div class="product-content">
 					<div class="product">
 						<a >
-							<img src="img/product/img1.jpg">
+							<img >
 						</a>
 						<div class="product-detail">
-							<h3>Men's / Watches</h3>
-							<h2>Gray Color Men's Watch</h2>
-							<a href="#">Add to Cart</a>
+							<h3></h3>
+							<h2>G</h2>
+							<!-- <a href="#"></a> -->
 							<p>Rs.4500/-</p>
 						</div>						
 					</div>
@@ -187,7 +185,7 @@
 						<div class="product-detail">
 							<h3>Men's / Pants</h3>
 							<h2>Levi's Jeans Pant</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.2000/-</p>
 						</div>
 					</div>
@@ -198,7 +196,7 @@
 						<div class="product-detail">
 							<h3>Men's / Watches</h3>
 							<h2>Black Men's Watch</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.4000/-</p>
 						</div>
 					</div>
@@ -209,7 +207,7 @@
 						<div class="product-detail">
 							<h3>Men's / Shoes</h3>
 							<h2>Nick Black Sneakers</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.3200/-</p>
 						</div>
 					</div>
@@ -220,7 +218,7 @@
 						<div class="product-detail">
 							<h3>Glasses</h3>
 							<h2>Wood Frame Sun Glass</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.1200/-</p>
 						</div>
 					</div>
@@ -231,7 +229,7 @@
 						<div class="product-detail">
 							<h3>Women's / Hand Bags</h3>
 							<h2>Leather Hand Bag</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.3800/-</p>
 						</div>
 					</div>
@@ -242,7 +240,7 @@
 						<div class="product-detail">
 							<h3>Men's / Shoes</h3>
 							<h2>Men's Sneaker</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.3500/-</p>
 						</div>
 					</div>
@@ -253,7 +251,7 @@
 						<div class="product-detail">
 							<h3>Women's / Hand Bags</h3>
 							<h2>Brown Leather Hand Bag</h2>
-							<a href="#">Add to Cart</a>
+							<!-- <a href="#">Add to Cart</a> -->
 							<p>Rs.5200/-</p>
 						</div>
 					</div>
@@ -334,17 +332,16 @@
 			</div> <!-- Footer Bar -->
 		</div>
 	</footer> <!-- Footer Area -->
-	<script>
+	<!-- <script>
 		$(window).on('load', function() {
-            
-            $('.product').on('click', function() {
-                let name = $(this).children('.product-detail').children()[1].innerText;
-				console.log(name);
-                url = "./product.html?name="+name;
-                window.location.href = url;
-            })
+			
+            url="./api/getShop.js";
+            $.getScript(url,function(){
+                getShop('all');
+            });
+
         });
-	</script>
+	</script> -->
 
 </body>
 

@@ -15,13 +15,10 @@ if ($conn->connect_error) {
     die(json_encode(['status' => 'error', 'message' => 'Connection failed: ' . $conn->connect_error]));
 }
 
-// 從POST請求獲取用戶名和密碼
-// $data = json_decode($_POST['submit']);
-
 if(!isset($_POST['submit']))
 {
     exit("wrong");
-    }
+}
 
 // $userUsername = $_POST['username'];
 // $userPassword = $_POST['password'];
