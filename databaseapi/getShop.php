@@ -22,135 +22,53 @@ if(!isset($_POST['submit']))
 if ( $_POST['submit'] == 'shop' )
 {
 
-    switch ($_POST['category'])
+    if ($_POST['category'] == 'all')
     {
-        case "all":
-            
-            $sql = "SELECT * FROM product ORDER BY RAND() LIMIT 8";
-            $result0 = mysqli_query($conn,$sql);
-            
-            
-            $j = 0;
-            while( $row = mysqli_fetch_array($result0) )
-            {
+        $sql = "SELECT * FROM product ORDER BY RAND() LIMIT 8";
+        $result0 = mysqli_query($conn,$sql);
+        
+        $j = 0;
+        while( $row = mysqli_fetch_array($result0) )
+        {
+            $Result[$j] = array();
+            $Result[$j]['product name'] = $row['product_name'];
+            $Result[$j]['category'] = $row['category'];
+            $Result[$j]['price'] = $row['price'];
+            // $Result[$j]['picture'] = $row['picture'];
+
+            $j++;
+        }
+
+        header($_SERVER['SERVER_PROTOCOL'].'200');
+
+        mysqli_close($conn);
+        echo json_encode($Result);
+
+    }
+    else{
+        $cate = $_POST['category'];
+        $sql = "SELECT * FROM product WHERE category='$cate' ORDER BY RAND() LIMIT 8";
+        $result0 = mysqli_query($conn,$sql);
+        
+        $j = 0;
+        while( $row = mysqli_fetch_array($result0) )
+        {
                 $Result[$j] = array();
                 $Result[$j]['product name'] = $row['product_name'];
                 $Result[$j]['category'] = $row['category'];
                 $Result[$j]['price'] = $row['price'];
                 $Result[$j]['picture'] = $row['picture'];
                 
-                // $Result[$j] = $row;
-
                 $j++;
-            }
+        }
 
-            header($_SERVER['SERVER_PROTOCOL'].'200');
-
-            mysqli_close($conn);
-            echo json_encode($Result);
-
-            break;
-
-        // case "desktop":
-
-        //     $sql = "SELECT * FROM product ORDER BY RAND() LIMIT 8;";
-        //     $result0 = mysqli_query($conn,$sql);
+        header($_SERVER['SERVER_PROTOCOL'].'200');
+        
+        mysqli_close($conn);
+        echo json_encode($Result);
             
-        //     if($result0)
-        //     {
-        //         $rows = mysqli_fetch_array($result0);
-
-        //         $j = 0;
-        //         while( $row = mysqli_fetch_array($result0) )
-        //         {
-        //             $Result[$j]['product name'] = $row['product_name'];
-        //             $Result[$j]['category'] = $row['category'];
-        //             $Result[$j]['price'] = $row['price'];
-        //             $Result[$j]['picture'] = $row['picture'];
-
-        //             $j++;
-        //         }
-
-        //         header($_SERVER['SERVER_PROTOCOL'].'200');
-        //         $_SESSION["userid"] = $rows['userid'];
-        //     }
-        //     else
-        //     {
-        //         header($_SERVER['SERVER_PROTOCOL'].'200');
-        //         $Result['result'] = " DataBase Error ! ";
-        //     }
-
-        //     mysqli_close($conn);
-        //     echo json_encode($Result);
-
-        //     break;
-
-        // case "desktop":
-
-        //     $sql = "SELECT * FROM product ORDER BY RAND() LIMIT 8;";
-        //     $result0 = mysqli_query($conn,$sql);
-            
-        //     if($result0)
-        //     {
-        //         $j = 0;
-        //         while( $row = mysqli_fetch_array($result0) )
-        //         {
-            //             $Result[$j]['product name'] = $row['product_name'];
-            //             $Result[$j]['category'] = $row['category'];
-        //             $Result[$j]['price'] = $row['price'];
-        //             $Result[$j]['picture'] = $row['picture'];
-
-        //             $j++;
-        //         }
-
-        //         header($_SERVER['SERVER_PROTOCOL'].'200');
-        //         $_SESSION["userid"] = $rows['userid'];
-        //     }
-        //     else
-        //     {
-        //         header($_SERVER['SERVER_PROTOCOL'].'200');
-        //         $Result['result'] = " DataBase Error ! ";
-        //     }
-
-        //     mysqli_close($conn);
-        //     echo json_encode($Result);
-        
-        //     break;
-        
-        // case "desktop":
-
-        //     $sql = "SELECT * FROM product ORDER BY RAND() LIMIT 8;";
-        //     $result0 = mysqli_query($conn,$sql);
-            
-        //     if($result0)
-        //     {
-        //         $rows = mysqli_fetch_array($result0);
-
-        //         $j = 0;
-        //         while( $row = mysqli_fetch_array($result0) )
-        //         {
-        //             $Result[$j]['product name'] = $row['product_name'];
-        //             $Result[$j]['category'] = $row['category'];
-        //             $Result[$j]['price'] = $row['price'];
-        //             $Result[$j]['picture'] = $row['picture'];
-
-        //             $j++;
-        //         }
-        
-        //         header($_SERVER['SERVER_PROTOCOL'].'200');
-        //         $_SESSION["userid"] = $rows['userid'];
-        //     }
-        //     else
-        //     {
-        //         header($_SERVER['SERVER_PROTOCOL'].'200');
-        //         $Result['result'] = " DataBase Error ! ";
-        //     }
-        
-        //     mysqli_close($conn);
-        //     echo json_encode($Result);
-
-        //     break;
     }
+    
 }
 
 ?>
