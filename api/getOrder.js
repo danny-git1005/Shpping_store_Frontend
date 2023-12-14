@@ -9,7 +9,7 @@ function get_user_order(){
         data:{'submit':'user_order', 'user':$.cookie('userid')},
         success: function(response){  
 
-            console.log(response);
+            // console.log(response);
 
             let tbody = $('#orderTable')[0].children[1];
             for (var i=0; i <= response.length; i++){
@@ -28,7 +28,6 @@ function get_user_order(){
                 }
 
             }
-           
             
         },
         error: function( XMLHttpRequest,response){
