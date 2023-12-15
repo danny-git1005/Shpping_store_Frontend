@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.order-search {
+    background: var(--darkStaleGray);
+    padding: 10px 8px;
+    display: flex;
+    gap: 20px;
+}
+.select-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.select-label {
+    color: var(--khaki);
+    font-weight: 700;
+}
+.search-button {
+    all: unset;
+    padding: 4px 8px;
+    background: var(--khaki);
+    border-radius: 4px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}

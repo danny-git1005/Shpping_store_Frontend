@@ -563,7 +563,9 @@ main .single-product .product-detail .product-cart #cart-form input{
 	padding: 5px;
 	color: var(--darkStaleGray);
 }
-main .single-product .product-detail .product-cart #cart-form input[type="submit"]{
+main .single-product .product-detail .product-cart #cart-form .cart-form-submit{
+	height: 30px;
+	padding: 5px;
 	background-color: var(--khaki);
 	border: 1px solid transparent;
 	color: var(--darkStaleGray);
@@ -571,7 +573,18 @@ main .single-product .product-detail .product-cart #cart-form input[type="submit
 	cursor: pointer;
 	transition: 0.5s;
 }
-main .single-product .product-detail .product-cart #cart-form input[type="submit"]:hover{
+main .single-product .product-detail .product-cart #cart-form .cart-form-submit:hover{
+	border: 1px solid var(--darkStaleGray);
+}
+main .single-product .product-detail .product-cart #cart-form input{
+	background-color: var(--khaki);
+	border: 1px solid transparent;
+	color: var(--darkStaleGray);
+	border-radius: 3px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+main .single-product .product-detail .product-cart #cart-form input:hover{
 	border: 1px solid var(--darkStaleGray);
 }
 main .single-product .product-detail .product-cart #wishlist-form input[type="checkbox"]{

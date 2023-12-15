@@ -31,7 +31,7 @@ if ( $_POST['submit'] == 'shop' )
         while( $row = mysqli_fetch_array($result0) )
         {
             $Result[$j] = array();
-            $Result[$j]['product name'] = $row['product_name'];
+            $Result[$j]['product_name'] = $row['product_name'];
             $Result[$j]['category'] = $row['category'];
             $Result[$j]['price'] = $row['price'];
             // $Result[$j]['picture'] = $row['picture'];
