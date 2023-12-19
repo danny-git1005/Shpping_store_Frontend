@@ -134,7 +134,7 @@
 				<div class="profile">
 					<div class="profile-img">
 						<img src="img/product/img5.jpg">
-						<h2>John Doe</h2>
+						<h2></h2>
 						<p id="accound_id"></p>
 					</div>
 					<ul>
@@ -182,7 +182,7 @@
 								<label>Address</label>
 								<textarea style="resize:none" id="address" name="address" rows="3"></textarea>
 							</div>
-							<div class="form-inline">					
+							<!-- <div class="form-inline">					
 								<div class="form-group">
 									<label>Tel</label>
 									<input type="text" id="tel" name="tel" minlength="11" maxlength="11" value="555-XXXXXXX">
@@ -195,7 +195,7 @@
 							<div class="form-group">
 								<label></label>
 								<input type="submit" id="update" name="update" value="Update">
-							</div>
+							</div> -->
 						</form>		
 					</div>
 				</div>				
@@ -280,7 +280,7 @@
 			
             url="./api/getProfile.js";
             $.getScript(url,function(){
-                get_profile(user,"detail");
+                get_profile(user,"account");
             });
 
         });

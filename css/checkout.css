@@ -1,0 +1,19 @@
+.custom-button {
+    width: 100%;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    background: var(--khaki);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .custom-button:hover {
+    opacity: 0.9;
+  }
+  .custom-button:active {
+    background: var(--khakiDark);
+  }

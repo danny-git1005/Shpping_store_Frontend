@@ -6,16 +6,20 @@ $(document).ready(function(){
         let productname = new URLSearchParams(window.location.search);
         // console.log(productname.get('productName'));
         get_product_info(productname.get('productName'));
-
-
     });
 
-    $('#Order').on('click', function() {
-        let num = $('#orderNumber');
-        console.log(num);
-        // url = "./product.html?productName="+name;
-        // window.location.href = url;
-    })
+
+    $('#handleAddToCard').on('click', function(){
+
+        let num = $('#orderNum').val();
+        let productname = new URLSearchParams(window.location.search);
+        let price = $('.product-price')[0].children[0].textContent.split(' ')[0];
+        let img = $('.larg-img')[0].children[0].src
+        let url = "./cart.html?productName="+productname.get('productName')+"&number="+num + "&price="+price + "&img="+img;
+        
+        window.location.href = url;
+    });
+
 
     
     function get_product_info(name){
@@ -42,8 +46,6 @@ $(document).ready(function(){
                 $('.product-meta')[0].children[0].textContent = "Category: " + response['category'];
                 $('.product-long-description')[0].children[1].textContent = response['item_describe'];
 
-
-            
             },
             error: function(XMLHttpRequest){
                 console.log("fail");

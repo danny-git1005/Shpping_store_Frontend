@@ -1,5 +1,5 @@
 
-function get_profile(user){
+function get_profile(user, page){
 
     $.ajax({
         type: "POST",
@@ -17,8 +17,11 @@ function get_profile(user){
             $('#fname')[0].value   = fisrt_name;
             $('#lname')[0].value   = last_name;
             $('#address')[0].value = address;
-            $('#accound_id')[0].textContent = user;
-            
+            if (page == 'account')
+            {
+                $('#accound_id')[0].textContent = user;
+            }
+            // console.log($('#accound_id')[0].value);
 
         },
         error: function( XMLHttpRequest,response){

@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<!-- Javascript -->	
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="./api/getCart.js"></script>
   		<script>
   			$(document).ready(function(){
   				
@@ -64,7 +65,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="dropdown">
+					<!-- <div class="dropdown">
 						<img src="img/icons/heart.png">
 						<div class="dropdown-menu wishlist-item">
 							<table border="1">
@@ -118,7 +119,7 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
+					</div> -->
 				</div> <!-- shop icons -->
 			</div> <!-- brand -->
 
@@ -158,7 +159,7 @@
 			<h2>Shopping Cart</h2>
 			<div class="cart-page">
 				<div class="cart-items">					
-					<table>
+					<table id="cartTable">
 						<thead>
 							<tr>
 								<th colspan="3">Cart Items</th>
@@ -166,78 +167,43 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td style="width: 20%;"><img src="img/product/img1.jpg"></td>
+								<td style="width: 20%;"><img></td>
 								<td style="width: 60%;">
-									<h2>Product Title</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<h2></h2>
+									<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<br> -->
+									<h3></h3>
 									<br>
-									<h3>Price: Rs.1200</h3>
-									<br>
-									<a href="">x</a> Remove
+									<!-- <a href="">x</a> Remove -->
 								</td>
 								<td class="qty" style="width: 15%;">
 									<div class="prev">-</div>
 									<div class="next">+</div>
 									<input type="number" name="cartNumber" class="cartNumber" value="1" min="1" max="10">
 									<br><br>
-									<h3>Rs.1200</h3>
+									<h3></h3>
 								</td>
 							</tr>
-							<tr>
-								<td style="width: 20%;"><img src="img/product/img2.jpg"></td>
-								<td style="width: 60%;">
-									<h2>Product Title</h2>
-									<p >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									<br>
-									<h3>Price: Rs.1200</h3>
-									<br>
-									<a href="">x</a> Remove
-								</td>
-								<td class="qty" style="width: 15%;">
-									<div class="prev">-</div>
-									<div class="next">+</div>
-									<input type="number" name="cartNumber" class="cartNumber" value="1" min="1" max="10">
-									<br><br>
-									<h3>Rs.1200</h3>
-								</td>
-							</tr>
-							<tr>
-								<td style="width: 20%;"><img src="img/product/img3.jpg"></td>
-								<td style="width: 60%;">
-									<h2>Product Title</h2>
-									<p >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									<br>
-									<h3>Price: Rs.1200</h3>
-									<br>
-									<a href="">x</a> Remove
-								</td>
-								<td class="qty" style="width: 15%;">
-									<div class="prev">-</div>
-									<div class="next">+</div>
-									<input type="number" name="cartNumber" class="cartNumber" value="1" min="1" max="10">
-									<br><br>
-									<h3>Rs.1200</h3>
-								</td>
-							</tr>						
+							
 						</tbody>	
 					</table>
-					<div class="pagination">
+					<!-- <div class="pagination">
 						<ul>
 							<li><a href="#">1</a></li>
 							<li><a href="#">2</a></li>
 							<li><a href="#">3</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 				<div class="cart-summary">
 					<div class="checkout-total">
 						<h3>Cart Summary</h3>
 						<ul>
-							<li>Number of Products x 15</li>
-							<li>Number of items x 20</li>
+							<li>Number of Products x 1</li>
+							<li></li>
 							<hr>
-							<li>Cart Total <span style="float: right;">Rs.1200</span></li>
-							<li><a href="checkout.html">Go to Checkout</a></li>
+							<li>Cart Total <span style="float: right;"></span></li>
+							<li><a id="gotoCheck">Go to Checkout</a></li>
 						</ul>
 					</div>
 				</div>

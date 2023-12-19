@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    getShop('all');
+
     function getShop(category){
         console.log(category);
         $.ajax({
@@ -9,9 +11,9 @@ $(document).ready(function(){
             data:{'submit':'shop','category':category},
             
             success: function(response){  
-                let parent = $(".product-content");
+                $(".product").remove();
                 
-                let all_product = $(".product");
+                let parent = $(".product-content");
                 response.map((cate) => {
                     const {category, product_name, price} = cate;
                     parent.append(`
@@ -36,24 +38,13 @@ $(document).ready(function(){
 					</div>`
                     )
                 })
-                // for (var i=0; i < all_product.length; i++){
-                //     let cate = response[i]['category'];
-                //     all_product.append(`
-                //         <div>${response.category}</div>
-                //     `)
-                //     if (cate == "desktop" ){
-                //         all_product[i].children[0].children[0].src = "./img/desktop_picture/000001_1689664331.jpg";
-                //     }
-                //     else if ( cate == 'laptop' ){
-                //         all_product[i].children[0].children[0].src = "./img/laptop_picture/l000002_1702017530.jpg";
-                //     }
-                //     else{
-                //         all_product[i].children[0].children[0].src = "./img/monitor_picture/l000001_1702226140.jpg";
-                //     }
-                //     all_product[i].children[1].children[0].textContent = response[i]['category'];
-                //     all_product[i].children[1].children[1].textContent = response[i]['product name'];
-                //     all_product[i].children[1].children[2].textContent = response[i]['price'] + " NTD";
-                // }
+
+                $('.product').on('click', function() {
+                    let name = $(this).children('.product-detail').children()[1].innerText;
+                    console.log(name);
+                    url = "./product.html?productName="+name;
+                    window.location.href = url;
+                });
                 
             },
             error: function( XMLHttpRequest,response){
@@ -64,17 +55,9 @@ $(document).ready(function(){
         });
 
     }
-    getShop('all');
-
-    $('.product').on('click', function() {
-        let name = $(this).children('.product-detail').children()[1].innerText;
-        console.log(name);
-        url = "./product.html?productName="+name;
-        window.location.href = url;
-    })
 
 
-    $('#cat_desktop').on('click', function() { 
+    $('#cat_desktop').on('click', function() {
         getShop('desktop'); 
     });
 
