@@ -11,6 +11,10 @@
  		<!-- Style Sheet -->
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/order.css" />
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script src="../api/getOrder2admin.js"></script>
+
  	</head>
 <body>
 
@@ -50,16 +54,16 @@
 				<ul>
 					<li><a class="active" href="index.html">Home</a></li>
 					<li><a href="order.html">Order</a></li>
-					<li><a href="product.html">Product</a></li>
+					<!-- <li><a href="product.html">Product</a></li>
 					<li><a href="category.html">Category</a></li>
 					<li><a href="stock.html">Stock</a></li>
-					<li><a href="">Users</a></li>
+					<li><a href="">Users</a></li> -->
 				</ul>
 			</div>
 			<div class="content">
 				<div class="order-search">
 					<div class="select-wrapper">
-						<label class="select-label">產品名稱</label>
+						<label class="select-label" id="productCate">產品名稱</label>
 						<select name="category" id="category-select">
 							<option value="laptop">laptop</option>
 							<option value="monitor">monitor</option>
@@ -67,10 +71,10 @@
 						</select>
 					</div>
 					<div class="select-wrapper">
-						<label class="select-label">狀態</label>
+						<label class="select-label" id="orderSchedule">狀態</label>
 						<select name="status" id="status-select">
 							<option value="complete">complete</option>
-							<option value="pending">pending</option>
+							<option value="uncomplete">uncomplete</option>
 						</select>
 					</div>
 					<button id="search-order" class="search-button">搜尋</button>
@@ -81,27 +85,16 @@
 						<table id="order-table">
 							<thead>
 								<tr>
-									<th>Date</th>
-									<th>Order Ref#</th>
-									<th>User</th>
+									<th>Customer</th>
+									<th>Product</th>
+									<th>Order ID</th>
 									<th>Amount</th>
-									<th>Payment Mode</th>
+									<th>delivery_id</th>
+									<th>delivery_com</th>									
 									<th>Status</th>
-									<th>View</th>
-									<th>Delete</th>									
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>11-05-2020</td>
-									<td>15895452</td>
-									<td>Kamran</td>
-									<td>1500</td>
-									<td>Cash On Delivery</td>
-									<td>Pending</td>
-									<td>View</td>
-									<td>Delete</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
