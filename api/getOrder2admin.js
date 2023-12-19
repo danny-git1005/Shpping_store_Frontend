@@ -21,7 +21,9 @@ $(document).ready(function(){
             success: function(response){  
     
                 console.log(response.result);
-                let table = document.getElementById('order-table');
+                $('#order-table tbody').find("tr").remove();
+                // let table = document.getElementById('order-table');
+                let table = $('#order-table tbody')[0];
                 response.map(data => {
                     const {costomer_id, product_name, order_id, price, delivery_id,delivery_company,schedule} = data;
                     let row = table.insertRow(-1);

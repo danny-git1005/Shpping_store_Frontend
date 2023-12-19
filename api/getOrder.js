@@ -8,8 +8,9 @@ function get_user_order(){
         dataType:'json',
         data:{'submit':'user_order', 'user':$.cookie('userid')},
         success: function(response){  
-            // console.log(response);
-            let table = document.getElementById('orderTable');
+
+            $('#order-table tbody').find("tr").remove();
+            let table = $('#orderTable tbody')[0];
             response.map(data => {
                 const {product_name, order_id, price, delivery_id,delivery_company,schedule} = data;
                 let row = table.insertRow(-1);
