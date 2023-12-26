@@ -44,7 +44,8 @@ if ($_POST['submit'] == 'user_order')
     product,
     delivery
     WHERE
-    orders.customer_id = costomer.costomer_id AND orders.customer_id = '$user' AND orders.product_id = product.product_id AND orders.delivery_id = delivery.delivery_id " ;
+    orders.customer_id = costomer.costomer_id AND orders.customer_id = '$user' AND orders.product_id = product.product_id AND 
+    orders.delivery_id = delivery.delivery_id " ;
     
     $result0 = mysqli_query($conn,$sql);
 
@@ -54,36 +55,12 @@ if ($_POST['submit'] == 'user_order')
         $Result[$j] = $row;
         $j++;
     }
-
-
-    // if($rows)
-    // {
-    //     $id = $rows['costomer_id'];
-    //     $name = $rows['name'];
-    //     $address = $rows['address'];
-
-    //     header($_SERVER['SERVER_PROTOCOL'].'200');
-    //     $Result['result'] = " user found : ".$_POST['user'];
-
-    //     $Result['name'] = $name;
-    //     $Result['ID'] = $id;
-    //     $Result['address'] = $address;
-        
-    // }
-    // else
-    // {
-    //     header($_SERVER['SERVER_PROTOCOL'].'200');
-    //     $Result['result'] = " User unexit.";
-    // }
-
 }
 else{
     header($_SERVER['SERVER_PROTOCOL'].'200');
     $Result['result'] = " Wrong Request! ";
     
 }
-
-
 
 mysqli_close($conn);
 echo json_encode($Result);

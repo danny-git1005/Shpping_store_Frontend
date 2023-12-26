@@ -10,7 +10,11 @@
  		<title>Create an E-Commerce Website using HTML, CSS and JS</title>
  		<!-- Style Sheet -->
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
- 	</head>
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<script src="../api/getLogout.js"></script>
+	</head>
 <body>
 
 	<header>
@@ -32,7 +36,7 @@
 							<ul>
 								<li><a href="#">My Account</a></li>								
 								<li><a href="#">Settings</a></li>
-								<li><a href="#">Logout</a></li>
+								<li><a href="#" id="logOut_button_admin">Logout</a></li>
 							</ul>
 						</div>
 					</div>
@@ -58,7 +62,7 @@
 			<div class="content dashboard">
 				<h3>Dashboard</h3>
 				<div class="content-data">
-					<div class="content-detail">
+					<!-- <div class="content-detail">
 						<h4>Low Stock Report</h4>
 						<table>
 							<thead>
@@ -78,8 +82,8 @@
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="content-detail">
+					</div> -->
+					<!-- <div class="content-detail">
 						<h4>Recent Order</h4>
 						<table>
 							<thead>
@@ -101,8 +105,8 @@
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="content-detail">
+					</div> -->
+					<!-- <div class="content-detail">
 						<h4>Completed Order</h4>
 						<table>
 							<thead>
@@ -124,10 +128,10 @@
 								</tr>
 							</tbody>
 						</table>
-					</div>
+					</div> -->
 				</div>
 			</div>
-		</div>		
+		</div>	
 
 	</main> <!-- Main Area -->
 

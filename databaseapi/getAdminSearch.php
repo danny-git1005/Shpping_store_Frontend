@@ -46,7 +46,8 @@ if ($_POST['submit'] == 'adminSearch')
     product,
     delivery
     WHERE
-    orders.customer_id = costomer.costomer_id  AND orders.product_id = product.product_id AND orders.delivery_id = delivery.delivery_id and orders.schedule = '$status' AND product.category = '$cate'" ;
+    orders.customer_id = costomer.costomer_id  AND orders.product_id = product.product_id AND 
+    orders.delivery_id = delivery.delivery_id and orders.schedule = '$status' AND product.category = '$cate'" ;
     
     $result0 = mysqli_query($conn,$sql);
 

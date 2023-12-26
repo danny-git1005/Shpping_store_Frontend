@@ -1,14 +1,18 @@
 $(document).ready(function(){
 
+    $('#logOut_button_admin').click(function() { 
+        logOut("../databaseapi/getLogout.php", '../index.html'); 
+    });
+
     $('#logOut_button').click(function() { 
-        logOut(); 
+        logOut("databaseapi/getLogout.php", './index.html'); 
     });
     
-    function logOut(){
+    function logOut(post_url, url){
 
         $.ajax({
             type: "POST",
-            url: "databaseapi/getLogout.php",
+            url: post_url,
             dataType:'json',
             data:{'submit':'logout'},
             success: function(response){  
@@ -17,7 +21,7 @@ $(document).ready(function(){
                 {
                     alert(response.result+" success");
                     $.cookie('userid',"",{ expires: -1 });
-                    location.href = "./index.html";
+                    location.href = url;
                 }
                 
             },
